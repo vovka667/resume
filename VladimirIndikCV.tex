@@ -1,0 +1,135 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\robustify\cftdotfill
+
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\paperheight}{11in}
+\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+    \begin{shaded}
+\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+    \end{shaded}
+  }\vspace{-5pt}
+}
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+%-----------------------------------------------------------
+
+
+\begin{document}
+
+\begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Vladimir Indik} & \textbf{\today} \\
+Site Reliability Engineer at data4life gGmbH & vladimir.indik@gmail.com \\
+https://github.com/vovka667 & Berlin Area, Germany \\
+\end{tabular*}
+\\
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item
+
+	\ressubheading{Bauman Moscow State Technical University}{Moscow, Russian Federation}{Master's degree, Information security}{2003 - 2009}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item
+	\ressubheading{data4life gGmbH - https://data4life.care/}{Berlin Area, Germany}{Site Reliability Engineer}{October 2017 - current}
+	\begin{itemize}
+		\resitem{I have been working on business-critical infrastructure components (monitoring, backup, automation) using IaC approach.}
+		\resitem{{\bf Tech Stack:} We use \textbf{Jenkins}, \textbf{Ansible}, \textbf{Prometheus}, HashiCorp \textbf{Terraform}, \textbf{Packer}, \textbf{Vault} and \textbf{Consul} on an \textbf{OpenStack} private cloud.}
+	\end{itemize}
+
+\item
+	\ressubheading{REG.RU - https://reg.com/}{Krasnodar, Russian Federation}{Software Engineer}{2014-2016}
+	\begin{itemize}
+		\resitem{Developing services for hosting department. They include hosting automation, antivirus checking of hosting servers, API, integration with external systems and so on.}
+	\end{itemize}
+
+\item
+	\ressubheading{Yandex - https://yandex.com/}{Moscow, Russian Federation}{Software Engineer}{2013-2014}
+	\begin{itemize}
+		\resitem{Software developer in the statistics department. Our team performed processing data on MapReduce clusters.}
+	\end{itemize}
+
+\item
+	\ressubheading{Russian Standard Bank - https://rsb.ru/}{Moscow, Russian Federation}{System Administrator}{2010-2013}
+	\begin{itemize}
+		\resitem{Software developer in the statistics department. Our team performed processing data on MapReduce clusters.}
+	\end{itemize}
+
+\item
+	\ressubheading{Jet Infosystems - https://jet.su/}{Moscow, Russian Federation}{Software Engineer}{2006-2009}
+	\begin{itemize}
+		\resitem{Service Desk and CMDB systems development (BMC Remedy, perl).}
+		\resitem{System administration (Linux, Sun Solaris, sendmail).}
+	\end{itemize}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+
+\item {\bf Root cause analysis:} I have an experience in identifying the root causes of faults and problems on several tech layers (from low level network packets to backend application source code).
+
+\item {\bf Disaster recovery:} I know not only how to make robust, highly available systems, but also how to restore them in case of disaster.
+
+\item {\bf Linux:} I've been using various types of linux for more than 15 years.
+	
+\end{itemize}
+
+\end{document}
